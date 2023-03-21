@@ -4,13 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
 	"github.com/sashabaranov/go-openai"
 	"log"
 	"net/http"
 	"os"
-	"time"
-
-	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
 )
 
 var client *openai.Client
@@ -29,8 +27,8 @@ func init() {
 }
 
 type request struct {
-	OriginalText string    `json:"original_text"`
-	Date         time.Time `json:"date"`
+	OriginalText string `json:"original_text"`
+	// Date         time.Time `json:"date"`
 }
 
 type response struct {
